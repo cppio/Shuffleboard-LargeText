@@ -1,0 +1,21 @@
+plugins {
+    id 'java-library'
+    id 'edu.wpi.first.wpilib.repositories.WPILibRepositoriesPlugin' version '2020.2'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url wpilibRepositories.mavenRemoteReleaseUrl
+    }
+}
+
+javafx {
+    modules = [ 'javafx.controls' ]
+    configuration = 'compileOnly'
+}
+
+dependencies {
+    compileOnly 'edu.wpi.first.shuffleboard:api:2020.+'
+}
